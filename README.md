@@ -1,5 +1,5 @@
 # Test Front-end 
-![Alt text](./project.png)
+![Alt text](./project2.png)
 
 This is a README for an HTML, CSS and Javascript application development project, based on React JS.
 
