@@ -5,29 +5,34 @@ import { Footer } from './components/Footer';
 import { MainCarousel } from './components/MainCarousel';
 import { ProductSlider } from './components/ProductSlider';
 import { Newsletter } from './components/Newsletter';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [products, setProducts] = useState([]);
-  const [countProducts, setCountProducts] = useState(9);
+  const [countProducts, setCountProducts] = useState(0);
+
+  useEffect(() => {
+    if (localStorage.getItem("itemCartCount")) {
+      setCountProducts(localStorage.getItem("itemCartCount"))
+    }
+  }, []);
+
+  const updateCart = () => {
+    setCountProducts(countProducts + 1)
+    localStorage.setItem("itemCartCount", countProducts + 1)
+  }
 
   return (
     <>
-      <Header 
-        products={products}
-        setProducts={setProducts}
+      <Header
         countProducts={countProducts}
-        setCountProducts={setCountProducts}
       />
-      <MainCarousel/>
+      <MainCarousel />
       <ProductSlider
-        products={products}
-        setProducts={setProducts}
         countProducts={countProducts}
-        setCountProducts={setCountProducts}
+        updateCart={updateCart}
       />
-      <Newsletter />  
+      <Newsletter />
       <Footer />
     </>
 

@@ -35,8 +35,8 @@ export const MainCarousel = () => {
                   alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>¡Hola! ¿Qué es lo que buscas?</h3>
+                <p>¿Crear o migrar tu comercio electrónico?</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -51,10 +51,8 @@ export const MainCarousel = () => {
                   alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                </p>
+                  <h3>¡Hola! ¿Qué es lo que buscas?</h3>
+                  <p>¿Crear o migrar tu comercio electrónico?</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
