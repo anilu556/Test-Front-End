@@ -1,15 +1,16 @@
 # Test Front-end 
-![Alt text](../../imagen.png)
+![Alt text](./project.png)
 
 This is a README for an HTML, CSS and Javascript application development project, based on React JS.
 
 ## Index
 
-1. *[Description](#Test Front-end)
-2. *[Installation](#Installation)
-3. *[Features](#Features)
-3. *[Technologies](#Technologies)
-4. *[Contact](#Contact)
+1. [Description](#TestFront-end)
+2. [Installation](#Installation)
+3. [Features](#Features)
+3. [Technologies](#Technologies)
+4. [Contact](#Contact)
+
 ## Installation
 
 1. Clone this project
