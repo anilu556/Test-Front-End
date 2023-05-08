@@ -67,15 +67,15 @@ header{
   right: -73%;
   background: #F8475F;
   border-radius: 50%;
-  height: 14px;
-  width: 14px;
+  height: 16px;
+  width: 16px;
 }
 
 .cartQuantity{
   font-size: 10px;
   position: absolute;
-  left: 4px;
-  top: 0px;
+  left: 4.7px;
+  top: 0.5px;
   color: #fff;
 }
 

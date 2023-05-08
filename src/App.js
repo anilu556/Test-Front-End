@@ -10,19 +10,22 @@ import { useState, useEffect } from 'react';
 function App() {
 
   const [countProducts, setCountProducts] = useState(0);
+  const cartQty = JSON.parse(localStorage.getItem("itemCartCount"));
 
   useEffect(() => {
     if (localStorage.getItem("itemCartCount")) {
-      setCountProducts(localStorage.getItem("itemCartCount"))
+      setCountProducts(cartQty)
     }
   }, []);
+
 
   const updateCart = () => {
     setCountProducts(countProducts + 1)
     localStorage.setItem("itemCartCount", countProducts + 1)
   }
 
-  console.log({countProducts})
+  // console.log({countProducts})
+  
   return (
     <>
       <Header
