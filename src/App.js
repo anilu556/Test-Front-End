@@ -22,6 +22,7 @@ function App() {
     localStorage.setItem("itemCartCount", countProducts + 1)
   }
 
+  console.log({countProducts})
   return (
     <>
       <Header

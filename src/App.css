@@ -128,6 +128,7 @@ header{
 .productSlider{
   width: 70%;
   margin: 43px auto;
+  position: relative;
 }
 
 .productSlider h2{
@@ -199,6 +200,11 @@ header{
   color: #000;
 }
 
+.productSlider .slick-prev:before, .productSlider .slick-next:before{
+  font-size: 30px;
+  opacity: 1.75;
+}
+
 .offTag {
   width: 0;
   height: 0;
@@ -219,6 +225,10 @@ header{
   font-family: 'Nunito';
   font-weight: 900;
   color: #fff;
+}
+
+.jewelery .offTag, .jewelery .offText, .women\'s.clothing.card .offTag, .women\'s.clothing.card .offText{
+  display: none;
 }
 
 .card-img-top{
@@ -262,6 +272,7 @@ header{
   padding-top: 20px;
   height: auto;
   padding-bottom: 38px;
+  position: relative;
 }
 
 .newsletter h1 {
@@ -298,7 +309,7 @@ header{
 input[type="submit"] {
   background: #000;
   color: white;
-  text-transform: uppercase;
+  text-transform: capitalize;
   border: none;
   border-radius: 0;
   padding: 15px;
@@ -364,10 +375,30 @@ input[type="submit"] {
   width: 82px;
 }
 
-.alertSuccess{
+/*Change text in autofill textbox*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.alertSuccessCart{
   width: 50%;
-  margin: 0 auto;
   text-align: center;
+  z-index: 10;
+  position: absolute !important;
+  top: -3%;
+  left: 24%;
+}
+
+.alertSuccessNews{
+  width: 50%;
+  text-align: center;
+  z-index: 10;
+  position: absolute !important;
+  top: -2%;
+  left: 24%;
 }
 
 @media only screen and (min-width: 1800px){

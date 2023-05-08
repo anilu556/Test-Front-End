@@ -65,7 +65,7 @@ export const Newsletter = () => {
       <h1>
         ¡Únete a nuestras novedades y promociones!
       </h1>
-      <Alert  show={showAlert} className="alertSuccess" variant="success">¡Se ha registrado correctamente!</Alert>
+      <Alert  show={showAlert} className="alertSuccessNews" variant="success">¡Se ha registrado correctamente!</Alert>
       <form className="newsletterForm" onSubmit={handleSubmit(onSubmit)}>
         <div className='inputForm'>
           <input
@@ -100,7 +100,7 @@ export const Newsletter = () => {
           {errors.mail && <p>{errors.mail.message}</p>}
         </div>
 
-        <input type="submit" />
+        <input type="submit"  value="Suscribirme"/>
    
       </form>
 

@@ -71,12 +71,12 @@ export const ProductSlider = (props) => {
         <h2>Más Vendidos</h2>
         <div className="underline"></div>
       </div>
-      <Alert  show={showAlert} className="alertSuccess" variant="success">¡Producto agregado al carrito!</Alert>
+      <Alert  show={showAlert} className="alertSuccessCart" variant="success">¡Producto agregado al carrito!</Alert>
       <Slider {...settings}>
 
         {productData.map(product => (
 
-          <Card>
+          <Card className={product.category}>
         
             <div className="offTag"></div>
             <p className="offText">OFF</p>
