@@ -10,7 +10,7 @@ import { useState } from 'react';
 function App() {
 
   const [products, setProducts] = useState([]);
-  const [countProducts, setCountProducts] = useState(0);
+  const [countProducts, setCountProducts] = useState(9);
 
   return (
     <>

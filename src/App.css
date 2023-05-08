@@ -116,7 +116,7 @@
 }
 
 .productSlider .card-body{
-  height: 38vh;
+  height: 220px;
 }
 
 .slick-slide:hover .card-body{
@@ -337,16 +337,16 @@ input[type="submit"] {
     padding: 0 20px;
   }
 
-  .productSlider .card-body{
-    height: 53vh;
-  }
-
   .slick-slide .card .btn{
     display: block;
   }
 
   .productSlider .card-title{
-    height: 20vh;
+    height: 90px;
+  }
+
+  .productSlider .card-body{
+    height: 250px;
   }
 
   .newsletterForm{

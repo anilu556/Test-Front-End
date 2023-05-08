@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {FaSearch, FaShoppingCart, FaUserAlt, FaAlignJustify} from "react-icons/fa";
 
-export const Header = ({products, setProducts}) => {
+export const Header = ({countProducts, setCountProducts}) => {
 
 
   return (
@@ -35,7 +35,7 @@ export const Header = ({products, setProducts}) => {
                 <div className="miniCart">
                     <FaShoppingCart style={{fontSize: '22px'}}/>
                     <div className="miniCartQuantity">
-                        <span className="cartQuantity">{products.length}</span>
+                        <span className="cartQuantity">{countProducts}</span>
                     </div> 
                 </div>
             </div>

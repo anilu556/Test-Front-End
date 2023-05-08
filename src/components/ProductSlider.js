@@ -11,8 +11,6 @@ export const ProductSlider = ({products, setProducts}) => {
     setProducts([...products, product])
   }
 
-  // console.log(products.length)
-
   var settings = {
 
     dots: false,

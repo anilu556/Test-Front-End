@@ -21,12 +21,10 @@ export const Newsletter = () => {
     formState: { errors }
   } = useForm();
 
-  const onSubmit = (userInfo) => console.log(userInfo);
+  const onSubmit = (userInfo) => {
 
-  console.log(errors)
-
-  //POST NEWSLETTER DATA
-
+  console.log(userInfo);
+  }
 
   return (
     <div className="newsletter"> 
@@ -71,7 +69,6 @@ export const Newsletter = () => {
 
           <input type="submit"/>
          </form>
-
     </div>
 
     
