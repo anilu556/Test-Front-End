@@ -1,12 +1,32 @@
 import React from 'react';
-import { useState } from 'react';
+import { useForm } from "react-hook-form";
+import { useState, useEffect } from 'react';
+
+const messages = {
+  req: "Este campo es obligatorio",
+  name: "Introduce el formato correcto",
+  mail: "Introduce una dirección correcta"
+ };
+
+ const patterns = {
+  name: /^[A-Za-z]+$/i,
+  mail: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+};
 
 export const Newsletter = () => {
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
 
-  const [values, setValues] = useState({
-    name: "",
-    email: ""
-  });
+  const onSubmit = (userInfo) => console.log(userInfo);
+
+  console.log(errors)
+
+  //POST NEWSLETTER DATA
+
 
   return (
     <div className="newsletter"> 
@@ -14,26 +34,46 @@ export const Newsletter = () => {
         ¡Únete a nuestras novedades y promociones!
         </h1>
         
-        <form className="form-inline">
-            <div className="form-group mb-2">
-                <input 
-                required 
-                pattern="[A-Za-z]" 
-                type="name" 
-                className="form-control" 
-                id="inputName" 
-                placeholder="Ingresa tu nombre"/>
-            </div>
-            <div className="form-group mx-sm-3 mb-2">
-                <input 
-                required 
-                type="email" 
-                className="form-control" 
-                id="inputEmail" 
-                placeholder="Ingresa tu mail"/>
-            </div>
-            <button type="submit" className="btn btn-primary mb-2">Suscribirme</button>
-        </form>
+        <form className="newsletterForm" onSubmit={handleSubmit(onSubmit)}>
+       
+       <div className='inputForm'> 
+          <input 
+            id="name" 
+            type="text"
+            placeholder='Ingresa tu nombre' 
+            {...register("name", {
+              required: messages.req,
+              pattern: {
+                value: patterns.name,
+                message: messages.name
+              }
+            })}
+            />
+            {errors.name && <p>{errors.name.message}</p>}
+       </div>
+
+       <div className='inputForm'> 
+          <input 
+            {...register("mail",  { required: true })}
+            id="mail" 
+        
+            placeholder='Ingresa tu mail' 
+            {...register("mail", {
+              required: messages.req,
+              pattern: {
+                value: patterns.mail,
+                message: messages.mail
+              }
+            })}
+            />
+            {errors.mail && <p>{errors.mail.message}</p>}
+        </div>
+
+          <input type="submit"/>
+         </form>
+
     </div>
+
+    
   )
 }

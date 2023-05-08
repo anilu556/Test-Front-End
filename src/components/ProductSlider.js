@@ -71,7 +71,7 @@ export const ProductSlider = ({products, setProducts}) => {
         
         {productData.map(product => (
        
-        <Card id={product.id}>
+        <Card>
           <Card.Img variant="top" src={product.image} />
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
