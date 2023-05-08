@@ -22,7 +22,7 @@ export const Newsletter = () => {
     formState: { errors }
   } = useForm();
 
-  const [showAlert, setshowAlert] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const onSubmit = async (userInfo) => {
     console.log(userInfo);
@@ -47,13 +47,18 @@ export const Newsletter = () => {
 
         if (response.status === 200) {
           console.log("Se añadió con éxito")
-          return setshowAlert(true);
+          return setShowAlert(true);
         }
+
       })
       .catch(error => {
         console.error('There was an error!', error);
       });
   }
+
+  setTimeout(() => {
+    setShowAlert(false);
+  }, 2000);
 
   return (
     <div className="newsletter">

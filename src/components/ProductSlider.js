@@ -38,11 +38,11 @@ export const ProductSlider = (props) => {
     ]
   };
 
-  const [productData, setProductData] = useState([])
+  const [productData, setProductData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
-      const url = "https://fakestoreapi.com/products";
+      const url = "https://fakestoreapi.com/products";{}
 
       try {
         const resp = await fetch(url);
@@ -58,6 +58,12 @@ export const ProductSlider = (props) => {
 
   }, []);
 
+  const [showAlert, setShowAlert] = useState(false);
+   
+  setTimeout(() => {
+      setShowAlert(false);
+  }, 2000);
+
   return (
 
     <div className="productSlider">
@@ -65,12 +71,13 @@ export const ProductSlider = (props) => {
         <h2>Más Vendidos</h2>
         <div className="underline"></div>
       </div>
-
+      <Alert  show={showAlert} className="alertSuccess" variant="success">¡Producto agregado al carrito!</Alert>
       <Slider {...settings}>
 
         {productData.map(product => (
 
           <Card>
+        
             <div className="offTag"></div>
             <p className="offText">OFF</p>
             <Card.Img variant="top" src={product.image} />
@@ -82,7 +89,7 @@ export const ProductSlider = (props) => {
               <Card.Text>
                 <p className='price'>por ${product.price}</p>
               </Card.Text>
-              <Button onClick={() => addProduct(product)} variant="primary">COMPRAR</Button>
+              <Button onClick={() => {addProduct(product); setShowAlert(true)}} variant="primary">COMPRAR</Button>
             </Card.Body>
           </Card>
         ))}
